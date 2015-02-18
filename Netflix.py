@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from numpy     import mean, sqrt, square, subtract
+from math import sqrt
 
 current_movie_id = 0
 
@@ -54,7 +54,9 @@ def netflix_rmse (it1, it2) :
     it2 an iterable
     return the root mean square error between it1 and it2
     """
-    return sqrt(mean(square(subtract(a, p))))
+    z = zip(it1, it2)
+    v = sum((x - y) ** 2 for x, y in z)
+    return sqrt(v / len(it1))
     
 
 # -------------
