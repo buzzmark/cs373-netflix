@@ -3,9 +3,7 @@
 from math import sqrt
 import json
 
-probe_location = '/u/downing/cs/netflix/probe.txt'
-answers_location = '/u/mck782/netflix-tests/pma459-answersCache.json'
-answer_cache = json.load(open(answers_location, 'r'))
+answer_cache = json.load(open('/u/mck782/netflix-tests/pma459-answersCache.json', 'r'))
 
 
 approx_list = []
