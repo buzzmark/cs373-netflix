@@ -87,6 +87,13 @@ class TestCollatz (TestCase) :
     # -----
     # solve
     # -----
+    
+    def test_netflix_solve1(self) :
+        w = StringIO()
+        r = StringIO("7227:\n874253\n7229:\n1796878\n1676554\n")
+        netflix_solve(r,w)
+        self.assertEqual(w.getvalue()[:6], "7227:\n")
+        self.assertEqual(w.getvalue()[-11:-5], "RMSE: ")
 
 
 
