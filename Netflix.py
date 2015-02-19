@@ -4,7 +4,7 @@ from math import sqrt
 import json
 
 answer_cache = json.load(open('/u/mck782/netflix-tests/pma459-answersCache.json', 'r'))
-
+avg_rating_movie_cache = json.load(open('/u/mck782/netflix-tests/pma459-mvAvgCache.json', 'r'))
 
 approx_list = []
 answer_list = []
@@ -39,8 +39,9 @@ def netflix_eval (customer_id) :
     global answer_list
     
     #compute aprroximate rating
-    rating = 3.0
+    rating = avg_rating_movie_cache[current_movie_id]
     
+    rating = round(rating, 1)
     approx_list.append(rating)
     answer_list.append(int(answer_cache[str(current_movie_id)][str(customer_id)]))
     return rating
