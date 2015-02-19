@@ -70,15 +70,19 @@ class TestCollatz (TestCase) :
 
     def test_rmse_1 (self) :
         e = netflix_rmse([1,1,1],[1,1,1])
-        self.assertEqual(e, 0)
+        self.assertEqual(e, '0.00')
         
     def test_rmse_2 (self) :
         e = netflix_rmse([2,3,4],[3,2,5])
-        self.assertEqual(e, 1)
+        self.assertEqual(e, '1.00')
 
     def test_rmse_3 (self) :
         e = netflix_rmse([2,3,4],[4,1,6])
-        self.assertEqual(e, 2)
+        self.assertEqual(e, '2.00')
+        
+    def test_rmse_4 (self) :
+        e = netflix_rmse([2,3,4],[4,3,2])
+        self.assertEqual(e, '1.63')    
 
     # -----
     # solve
