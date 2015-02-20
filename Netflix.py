@@ -84,7 +84,7 @@ def netflix_rmse (it1, it2) :
     """
     z = zip(it1, it2)
     v = sum((x - y) ** 2 for x, y in z)
-    return '%.2f' % round( sqrt(v / len(it1)), 2)
+    return '%.2f' % sqrt(v / len(it1))
     
 
 # -------------
