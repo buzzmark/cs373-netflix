@@ -1,0 +1,113 @@
+commit 6c4868c1b550b8c40ad279b210662870bcadb245
+Author: matthew2 <matthew2@cs.utexas.edu>
+Date:   Thu Feb 19 21:17:03 2015 -0600
+
+    add pydoc3 documentation
+
+commit 58392adf20eeea6ba933e2a39ef0ecb9338c7e70
+Author: matthew2 <matthew2@cs.utexas.edu>
+Date:   Thu Feb 19 21:15:12 2015 -0600
+
+    add some insertions and fix documentation
+
+commit 332afe4429966b3002ce86a515d002ce4640ab61
+Author: matthew2 <matthew2@cs.utexas.edu>
+Date:   Thu Feb 19 20:29:14 2015 -0600
+
+    From post on Piazza, now truncate RMSE instead of round
+
+commit 2b3a45aa1b8a1c90a99db04a1a9d3aa080b030ff
+Author: matthew2 <matthew2@cs.utexas.edu>
+Date:   Thu Feb 19 20:00:10 2015 -0600
+
+    Changed acceptance tests to be more representative of probe.txt. Fixes #21
+
+commit 6d9179a74008707a91693a7aec33de0b15007bf5
+Author: matthew2 <matthew2@cs.utexas.edu>
+Date:   Thu Feb 19 19:29:44 2015 -0600
+
+    Add a few more unit tests. Closes #3
+
+commit 390f8d1958fc36c3fb961a66d5b3e7732acd3988
+Author: matthew2 <matthew2@cs.utexas.edu>
+Date:   Thu Feb 19 19:15:24 2015 -0600
+
+    Change caches and adjust weights to get RMSE of 0.94
+
+commit 117e737244ab1c7b297842741b22285f12051c36
+Author: matthew2 <matthew2@cs.utexas.edu>
+Date:   Wed Feb 18 23:28:43 2015 -0600
+
+    Use cache based on movie decade. Closes #19
+
+commit b0b7e776743dd4286db7b231308da7e20d3a06c8
+Author: matthew2 <matthew2@cs.utexas.edu>
+Date:   Wed Feb 18 20:26:47 2015 -0600
+
+    Add cache for user's average rating. Closes #18
+
+commit 702d33868d93148b3ba4b97a055070324b1c4098
+Author: matthew2 <matthew2@cs.utexas.edu>
+Date:   Wed Feb 18 20:02:50 2015 -0600
+
+    Add cache for average movie rating. Closes #17
+
+commit ba6133ed235ce9097719dba41be9edea6acec51f
+Author: matthew2 <matthew2@cs.utexas.edu>
+Date:   Wed Feb 18 19:48:19 2015 -0600
+
+    Add acceptance tests
+
+commit b40886c1f309c9b25d0631ebab2b440e31f873c8
+Author: matthew2 <matthew2@cs.utexas.edu>
+Date:   Wed Feb 18 19:32:46 2015 -0600
+
+    Add to unit tests
+
+commit 2376dad8733dd1d6acad61207c5f2b56506485bd
+Author: Matthew Stromberg <mcmcmatthew@gmail.com>
+Date:   Wed Feb 18 18:44:40 2015 -0600
+
+    Delete README.md
+
+commit d6d948b704ae223da9d54527c8d40a3d0d9ada9e
+Author: matthew2 <matthew2@cs.utexas.edu>
+Date:   Wed Feb 18 18:44:09 2015 -0600
+
+    Fix unit tests for netflix_rmse. Fixes #15
+
+commit 18580607ff490b60d6594888a6394b8f990215a3
+Author: matthew2 <matthew2@cs.utexas.edu>
+Date:   Wed Feb 18 18:39:08 2015 -0600
+
+    Implement comparing of guesses with actual values to get RMSE. Closes #14
+
+commit 6352a5e1abb98aec64b1abedcb1738d7020ca464
+Author: matthew2 <matthew2@cs.utexas.edu>
+Date:   Wed Feb 18 17:42:54 2015 -0600
+
+    add some unit test cases
+
+commit 0c17fa7e9d212faaa0fd2ac7bdcf218c47b87ddf
+Author: matthew2 <matthew2@cs.utexas.edu>
+Date:   Wed Feb 18 16:33:22 2015 -0600
+
+    write basic outline/skeleton code. Closes #13
+
+commit 8816a29ebacbfe4ae60d4c028cfd5f8fd0d126ec
+Author: matthew2 <matthew2@cs.utexas.edu>
+Date:   Wed Feb 18 16:10:24 2015 -0600
+
+    use dos2unix to fix line endings
+
+commit c2eb40d8ea6540b4bf8d538f9e7cd58dd7753acd
+Author: matthew2 <matthew2@cs.utexas.edu>
+Date:   Wed Feb 18 14:46:10 2015 -0600
+
+    Add initial files. Closes #12
+
+commit b025a71cac67554ac63a4ed28bab0f8985619f0d
+Author: Matthew Stromberg <mcmcmatthew@gmail.com>
+Date:   Sat Feb 14 19:58:54 2015 -0600
+
+    Initial commit
