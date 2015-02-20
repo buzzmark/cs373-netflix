@@ -38,12 +38,11 @@ class TestCollatz (TestCase) :
         s = "2649429\n"
         v = netflix_read(s)
         self.assertEqual(v, 2649429)
-
-    # ----
-    # eval
-    # ----
-
-
+        
+    def test_read_4 (self) :
+        s = "9999:\n"
+        v = netflix_read(s)
+        self.assertEqual(v, -1)
         
     # -----
     # print
@@ -63,6 +62,11 @@ class TestCollatz (TestCase) :
         w = StringIO()
         netflix_print(w, "5.0")
         self.assertEqual(w.getvalue(), "5.0\n")
+        
+    def test_print_4 (self) :
+        w = StringIO()
+        netflix_print(w, "4.5")
+        self.assertEqual(w.getvalue(), "4.5\n")
 
     # -----
     # rmse
@@ -93,6 +97,20 @@ class TestCollatz (TestCase) :
         r = StringIO("7227:\n874253\n7229:\n1796878\n1676554\n")
         netflix_solve(r,w)
         self.assertEqual(w.getvalue()[:6], "7227:\n")
+        self.assertEqual(w.getvalue()[-11:-5], "RMSE: ")
+        
+    def test_netflix_solve2(self) :
+        w = StringIO()
+        r = StringIO("7227:\n874253\n")
+        netflix_solve(r,w)
+        self.assertEqual(w.getvalue()[:6], "7227:\n")
+        self.assertEqual(w.getvalue()[-11:-5], "RMSE: ")
+        
+    def test_netflix_solve3(self) :
+        w = StringIO()
+        r = StringIO("7229:\n1796878\n1676554\n")
+        netflix_solve(r,w)
+        self.assertEqual(w.getvalue()[:6], "7229:\n")
         self.assertEqual(w.getvalue()[-11:-5], "RMSE: ")
 
 
