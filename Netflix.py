@@ -4,9 +4,8 @@ from math import sqrt
 import json
 
 answer_cache = json.load(open('/u/mck782/netflix-tests/pma459-answersCache.json', 'r'))
-mv_avg_cache = json.load(open('/u/mck782/netflix-tests/pma459-mvAvgCache.json', 'r'))
 user_cache = json.load(open('/u/mck782/netflix-tests/nrc523-ucache.json', 'r'))
-date_cache = json.load(open('/u/mck782/netflix-tests/af22574-movieDates.json', 'r'))
+mv_cache = json.load(open('/u/mck782/netflix-tests/nrc523-mvcache.json', 'r'))
 
 approx_list = []
 answer_list = []
@@ -40,21 +39,23 @@ def netflix_eval (customer_id) :
     global approx_list
     global answer_list
     
-    #compute aprroximate rating
-    rating  = 0.30 * mv_avg_cache[current_movie_id]
+    year = mv_cache[str(current_movie_id)]['period']    
     
-    year = date_cache[str(current_movie_id)]
-    if year == 'NULL':
-        rating += 0.70 * user_cache[str(customer_id)]['avg']
-    else:
-        decade = int(year) // 10 * 10
-        #rating += 0.00 * user_cache[str(customer_id)]['avg']
-        rating += 0.70 * user_cache[str(customer_id)][str(decade)]
-    
+    #the weights are weird but letting them go negative improved the RMSE by .03 
+    rating  = 0.64 * mv_cache[str(current_movie_id)]['average']
+    rating += 1.19 * user_cache[str(customer_id)][year]
+    rating -= 0.39 * user_cache[str(customer_id)]['avg']
+    rating -= 0.48 * 3.23
     
     rating = round(rating, 1)
+    if rating > 5.0:
+       rating = 5.0
+    elif rating < 1.0:
+       rating = 1.0
+    
     approx_list.append(rating)
     answer_list.append(int(answer_cache[str(current_movie_id)][str(customer_id)]))
+
     assert rating >= 1.0
     assert rating <= 5.0
     return rating
@@ -83,7 +84,7 @@ def netflix_rmse (it1, it2) :
     """
     z = zip(it1, it2)
     v = sum((x - y) ** 2 for x, y in z)
-    return '%.2f' % sqrt(v / len(it1))
+    return '%.2f' % round( sqrt(v / len(it1)), 2)
     
 
 # -------------
